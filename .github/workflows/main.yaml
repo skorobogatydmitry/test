@@ -1,0 +1,26 @@
+name: Main
+on:
+  workflow_call:
+    inputs:
+      cluster_tier:
+        description: "Select cluster tier"
+        required: false
+        type: string
+        default: "PAID"
+      base_version:
+        description: "Provide Base DB version from which the upgrade to be validated"
+        required: false
+        type: string
+        default: "None"
+      target_version:
+        description: "Provide target DB version to be validated"
+        required: false
+        type: string
+        default: "None"
+jobs:
+  env:
+    name: Env
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: echo "-${{ inputs.cluster_tier }}- -${{ inputs.base_version }}- -${{ inputs.target_version }}-"
