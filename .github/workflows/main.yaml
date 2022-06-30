@@ -19,8 +19,8 @@ on:
         default: "None"
 jobs:
   env:
-    name: Env
+    name: Echo
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Still echoes
         run: echo "-${{ inputs.cluster_tier }}- -${{ inputs.base_version }}- -${{ inputs.target_version }}-"

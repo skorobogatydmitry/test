@@ -20,7 +20,12 @@ on:
         type: string
 
 jobs:
-  lit:
+  drop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Still echoes
+        run: echo "-${{ inputs.cluster_tier }}- -${{ inputs.base_version }}- -${{ inputs.target_version }}-"
+  call:
     uses: ./.github/workflows/main.yaml
     with:
       cluster_tier: "${{ inputs.cluster_tier }}"
