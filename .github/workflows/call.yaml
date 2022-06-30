@@ -28,6 +28,6 @@ jobs:
   call:
     uses: ./.github/workflows/main.yaml
     with:
-      cluster_tier: "${{ inputs.cluster_tier }}"
-      base_version: "${{ inputs.base_version }}"
-      target_version: "${{ inputs.target_version }}"
+      cluster_tier: ${{ github.event.inputs.cluster_tier }}
+      base_version: ${{ github.event.inputs.base_version }}
+      target_version: ${{ github.event.inputs.target_version }}
